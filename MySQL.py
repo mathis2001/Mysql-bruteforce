@@ -59,14 +59,14 @@ with open(wordfile, "r") as wordlist: #On ouvre le fichier choisit en tant que l
 			if errno == 1045: #Si on reçoit le code d'erreur 1045 notre mot de passe n'est pas le bon donc on ecrit login failed
 				print(bcolors.FAIL+"[!] "+bcolors.RESET+"Login failed!")
 			elif errno == 1130: #Si on reçoit le code d'erreur 1130 notre hôte n'est pas autorisée et on note connection refused
-				print("[!] Connection refused")
+				print(bcolors.FAIL+"[!] "+bcolors.RESET+"Connection refused")
 			elif errno == 2002: #Si on reçoit le code d'erreur 2002 la connexion au serveur local ne peut pas être effectuée
-				print("[!] impossible de se connecter au serveur MySQL local via le socket '/var/run/mysqld/mysqld")			
+				print(bcolors.FAIL+"[!] "+bcolors.RESET+"impossible de se connecter au serveur MySQL local via le socket '/var/run/mysqld/mysqld")			
 			elif errno == 2005: #Si on reçoit le code d'erreur 2005 le nom de l'hôte n'est pas bon 
-				print("[!] Unknown server host")
+				print(bcolors.FAIL+"[!] "+bcolors.RESET+"Unknown server host")
 			elif errno == 2013: #Si on reçoit le code d'erreur 2013 la connexion a été perdue
-				print("[!] connection lost")
+				print(bcolors.FAIL+"[!] "+bcolors.RESET+"connection lost")
 			else: #Sinon
-				print("[!] une erreur inconnue c'est produite")
+				print(bcolors.FAIL+"[!] "+bcolors.RESET+"une erreur inconnue c'est produite")
 
-print("[-] le mot de passe n'a pas été trouvé.") #Si le mot de passe n'a pas été trouvé au bout de la recherche on note que le mot de passe n'a pas été trop
+print(bcolors.WARNING+"[!] "+bcolors.RESET+"le mot de passe n'a pas été trouvé.") #Si le mot de passe n'a pas été trouvé au bout de la recherche on note que le mot de passe n'a pas été trop
