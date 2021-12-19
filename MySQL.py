@@ -2,6 +2,7 @@ import sys
 import MySQLdb
 import time
 import re
+import os
 
 class bcolors:
 	OK = '\033[92m'
@@ -13,6 +14,7 @@ if len(sys.argv) == 1:
 	print(bcolors.FAIL+"[!] "+bcolors.RESET+ "Veuillez entrer une liste en argument pour commencer l'attaque")
 	exit()
 
+path = os.getcwd()
 wordfile = sys.argv[1]
 
 print(bcolors.OK+"[+] "+bcolors.RESET+"Attaque commencée avec la liste {}".format(wordfile))
@@ -33,6 +35,7 @@ with open(wordfile, "r") as wordlist: #On ouvre le fichier choisit en tant que l
 			LogFile=open("time.log", "w") #On ouvre un noveau fichier time.log pour y deposer la valeur trouvée
 			#LogFile.write(str(TotalTime))
 			LogFile.close()
+			print(bcolors.OK+"[+] "+bcolors.RESET+"Fichier log enregistré dans"+ path+"/time.log")
 
 			points=0
 			
