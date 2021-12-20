@@ -51,7 +51,7 @@ with open(wordfile, "r") as wordlist: #On ouvre le fichier choisit en tant que l
 				points=points+1
 			if points == 5:
 				print(bcolors.OK+"[+] "+bcolors.RESET+"Le mot de passe trouvé a obtenu la note de", points,"/5 au test de robustesse")
-			if points < 5:
+			if points < 5 and points >=3:
 				print(bcolors.WARNING+"[-] "+bcolors.RESET+"Le mot de passe trouvé a obtenu la note de", points,"/5 au test de robustesse")
 			if points < 3:
 				print(bcolors.FAIL+"[!] "+bcolors.RESET+"Le mot de passe trouvé a obtenu la note de", points,"/5 au test de robustesse")
